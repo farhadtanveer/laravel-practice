@@ -9,6 +9,7 @@ class PostController extends Controller
 {
     public function index(){ 
         $data['posts'] = DB::table('post')->get();
+        return $data;
         return view('post/index', $data);
     }
 
@@ -44,7 +45,7 @@ class PostController extends Controller
     }
 
     public function delete(Request $request,$id){
-        $data['title']= $request->title;
+        $data['title']= $request->title;  
         $data['details']= $request->details;
 
         DB::table('post')->where('id',$id)->delete();
