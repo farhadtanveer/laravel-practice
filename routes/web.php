@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
@@ -32,3 +33,4 @@ Route::controller(PostController::class)->name('post.')->group(function(){
     Route::delete('post/delete/{id}','delete') -> name('delete');
 });
 
+Route::resource('category', CategoryController::class);
